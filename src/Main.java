@@ -6,8 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        hasUniqueValues("Help me handle the coding interview!");
-        checkPermutation("code is awsome!", "some code is aw!");
+        System.out.println(hasUniqueValues("Help me handle the coding interview!"));
+        System.out.println(checkPermutation("code is awsome!", "some code isaw!"));
+        System.out.println(URLify("Mr John Smith    ", 13));
     }
 
     /*
@@ -41,4 +42,22 @@ public class Main {
         return Arrays.equals(a_copy, b_copy);
     }
 
+    /*
+     Ex 1.3
+     */
+    public static String URLify(String input, int length){
+        char[] str = input.toCharArray();
+        for (int i = 0; i < length; i++){
+            if (str[i] == ' '){
+                length += 2;
+                for ( int j = length - 1; j >= i; j-- ){
+                    str[j] = str[j-2];
+                }
+                str[i] = '%';
+                str[++i] = '2';
+                str[++i] = '0';
+            }
+        }
+        return String.valueOf(str);
+    }
 }
