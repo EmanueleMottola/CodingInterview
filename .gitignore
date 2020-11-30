@@ -32,4 +32,4 @@ hs_err_pid*
 .idea/modules.xml
 .idea/project-template.xml
 CodingInterview.iml
-src/
+.idea/vcs.xml
